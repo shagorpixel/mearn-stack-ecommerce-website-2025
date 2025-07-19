@@ -61,8 +61,8 @@ const Navber = () => {
               <p>Back</p>
             </div>
             {
-              menuList.map(items=>(
-                <NavLink onClick={ ()=>setvisible(false)} to={items.path} className="py-2 pl-6 border border-gray-200 hover:bg-gray-100">
+              menuList.map((items,index)=>(
+                <NavLink key={index} onClick={ ()=>setvisible(false)} to={items.path} className="py-2 pl-6 border border-gray-200 hover:bg-gray-50">
                   {items.name}
                 </NavLink>
               ))
