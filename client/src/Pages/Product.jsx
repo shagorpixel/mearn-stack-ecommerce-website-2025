@@ -7,9 +7,9 @@ import RelatedProducts from "../Components/RelatedProducts";
 const Product = () => {
   const { productId } = useParams();
   const [productData, setProductData] = useState(false);
-  const { products, currency } = useContext(ShopContext);
+  const { products, currency,addToCart } = useContext(ShopContext);
   const [image, setImage] = useState("");
-  const [size, setSize] = useState("");
+  const [size, setSize] = useState();
 
   useEffect(() => {
     const foundProduct = products.find((item) => item._id === productId);
@@ -77,7 +77,7 @@ const Product = () => {
               ))}
             </div>
           </div>
-          <button className=" bg-black text-white px-8 py-3 rounded cursor-pointer active:bg-gray-700">
+          <button onClick={()=>addToCart(productData._id,size)} className=" bg-black text-white px-8 py-3 rounded cursor-pointer active:bg-gray-700">
             ADD TO CART
           </button>
           <hr className=" mt-8 sm:w-4/5 border border-gray-100" />
