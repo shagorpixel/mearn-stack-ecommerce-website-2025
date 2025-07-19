@@ -3,6 +3,7 @@ import { ShopContext } from '../Context/ShopContext';
 import Title from '../Components/Title';
 import { assets } from '../assets/frontend_assets/assets';
 import CartTotal from '../Components/CartTotal';
+import Orders from './Orders';
 const Cart = () => {
    
     const {products,currency,cartItems,updateQuantity,navigate,getCartCount} = useContext(ShopContext);
@@ -59,7 +60,7 @@ const Cart = () => {
                 <div className=' w-full sm:w-[450px]'>
                     <CartTotal />
                     <div className=' w-full text-end'>
-                        <button onClick={()=>navigate()} className="bg-black text-white text-sm my-8 px-8 py-3 rounded">PROCEED TO CHECKOUT</button>
+                        <button onClick={()=>navigate('/place-order')} className="bg-black text-white text-sm my-8 px-8 py-3 rounded">PROCEED TO CHECKOUT</button>
                     </div>
                 </div>
             </div>

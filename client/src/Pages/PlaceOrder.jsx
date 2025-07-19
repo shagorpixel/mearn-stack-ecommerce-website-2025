@@ -3,10 +3,12 @@ import Title from "../Components/Title";
 import CartTotal from "../Components/CartTotal";
 import { assets } from "../assets/frontend_assets/assets";
 import { ShopContext } from "../Context/ShopContext";
+import { useNavigate } from "react-router-dom";
+
 
 const PlaceOrder = () => {
     const [method,setMethod] = useState('cod');
-    const{navigate} = useContext(ShopContext);
+    const navigate = useNavigate();
   return (
     <div className=" flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t">
       {/* --------------- left side ------------------ */}
