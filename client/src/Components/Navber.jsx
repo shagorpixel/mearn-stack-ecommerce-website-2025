@@ -24,7 +24,9 @@ const Navber = () => {
   const [visible,setvisible] = useState(false);
   return (
     <div className=" flex items-center justify-between py-5 font-medium">
+      <Link to={'/'}>
       <img src={assets.logo} className=" w-36 " alt="" />
+      </Link>
       <ul className=" hidden sm:flex gap-5 text-gray-700 text-sm">
         {menuList.map((list, index) => (
           <NavLink key={index} to={list.path} className={`flex flex-col items-center gap-1`}>
@@ -54,13 +56,13 @@ const Navber = () => {
        {/* mobile menu */}
        <div className={`absolute top-0 right-0 bottom-0 sm:w-0 overflow-hidden bg-white transition-all ${visible?'w-full':'w-0'}`}>
          <div className=" flex flex-col text-gray-600">
-            <div onClick={()=>setvisible(false)} className=" flex items-center gap-4 p-3 cursor-pointer">
+            <div onClick={()=>setvisible(false)} className=" flex items-center gap-4 p-3 cursor-pointer hover:bg-gray-100">
               <img className=" h-4 rotate-180" src={assets.dropdown_icon} alt="" />
               <p>Back</p>
             </div>
             {
               menuList.map(items=>(
-                <NavLink onClick={ ()=>setvisible(false)} to={items.path} className="py-2 pl-6 border border-gray-200">
+                <NavLink onClick={ ()=>setvisible(false)} to={items.path} className="py-2 pl-6 border border-gray-200 hover:bg-gray-100">
                   {items.name}
                 </NavLink>
               ))
